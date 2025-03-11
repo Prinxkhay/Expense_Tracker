@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/secondfragment">
+
+    <fragment
+        android:id="@+id/firstfragment"
+        android:name="com.example.budgetmanager.Firstfragment"
+        android:label="Firstfragment" >
+        <action
+            android:id="@+id/action_firstfragment_to_secondfragment"
+            app:destination="@id/secondfragment" />
+        <action
+            android:id="@+id/action_firstfragment_to_thirdfragment"
+            app:destination="@id/thirdfragment" />
+        <action
+            android:id="@+id/action_firstfragment_to_fourthfragment"
+            app:destination="@id/fourthfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondfragment"
+        android:name="com.example.budgetmanager.Secondfragment"
+        android:label="Secondfragment" >
+        <action
+            android:id="@+id/action_secondfragment_to_firstfragment"
+            app:destination="@id/firstfragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdfragment"
+        android:name="com.example.budgetmanager.Thirdfragment"
+        android:label="Thirdfragment" >
+        <action
+            android:id="@+id/action_thirdfragment_to_firstfragment"
+            app:destination="@id/firstfragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthfragment"
+        android:name="com.example.budgetmanager.HistoryFragment"
+        android:label="HistoryFragment">
+        <action
+            android:id="@+id/action_fourthfragment_to_firstfragment"
+            app:destination="@id/firstfragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
